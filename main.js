@@ -41,7 +41,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar></app-navbar>\n<div class=\"container\">\n  <app-log-form></app-log-form>\n  <app-logs></app-logs>\n</div>"
+module.exports = "<app-navbar></app-navbar>\n<div class=\"container\">\n  <app-product-form></app-product-form>\n  <app-products></app-products>\n</div>"
 
 /***/ }),
 
@@ -65,7 +65,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
-        this.title = 'app';
+        this.title = 'Product management console';
     }
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -96,9 +96,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/navbar/navbar.component */ "./src/app/components/navbar/navbar.component.ts");
-/* harmony import */ var _components_log_form_log_form_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/log-form/log-form.component */ "./src/app/components/log-form/log-form.component.ts");
-/* harmony import */ var _components_logs_logs_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/logs/logs.component */ "./src/app/components/logs/logs.component.ts");
-/* harmony import */ var _services_log_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./services/log.service */ "./src/app/services/log.service.ts");
+/* harmony import */ var _components_product_form_product_form_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/product-form/product-form.component */ "./src/app/components/product-form/product-form.component.ts");
+/* harmony import */ var _components_products_products_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/products/products.component */ "./src/app/components/products/products.component.ts");
+/* harmony import */ var _services_product_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./services/product.service */ "./src/app/services/product.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -121,219 +121,18 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
                 _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_4__["NavbarComponent"],
-                _components_log_form_log_form_component__WEBPACK_IMPORTED_MODULE_5__["LogFormComponent"],
-                _components_logs_logs_component__WEBPACK_IMPORTED_MODULE_6__["LogsComponent"]
+                _components_product_form_product_form_component__WEBPACK_IMPORTED_MODULE_5__["ProductFormComponent"],
+                _components_products_products_component__WEBPACK_IMPORTED_MODULE_6__["ProductsComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"]
             ],
-            providers: [_services_log_service__WEBPACK_IMPORTED_MODULE_7__["LogService"]],
+            providers: [_services_product_service__WEBPACK_IMPORTED_MODULE_7__["ProductService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/components/log-form/log-form.component.css":
-/*!************************************************************!*\
-  !*** ./src/app/components/log-form/log-form.component.css ***!
-  \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ""
-
-/***/ }),
-
-/***/ "./src/app/components/log-form/log-form.component.html":
-/*!*************************************************************!*\
-  !*** ./src/app/components/log-form/log-form.component.html ***!
-  \*************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"card card-body mb-3\">\n  <form (ngSubmit)=\"onSubmit()\">\n    <div class=\"form-group\">\n      <input type=\"text\" name=\"text\" [(ngModel)]=\"text\" class=\"form-control\" placeholder=\"Add a log...\">\n    </div>\n    <input type=\"submit\" value=\"Add Log\" class=\"btn btn-light\" [disabled]=\"!this.text\">\n    <button (click)=\"clearState()\" type=\"button\" class=\"btn btn-warning\" [hidden]=!this.text>Clear</button>\n  </form>\n</div>"
-
-/***/ }),
-
-/***/ "./src/app/components/log-form/log-form.component.ts":
-/*!***********************************************************!*\
-  !*** ./src/app/components/log-form/log-form.component.ts ***!
-  \***********************************************************/
-/*! exports provided: LogFormComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LogFormComponent", function() { return LogFormComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_log_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/log.service */ "./src/app/services/log.service.ts");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var LogFormComponent = /** @class */ (function () {
-    function LogFormComponent(logService) {
-        this.logService = logService;
-        this.isNew = true;
-    }
-    LogFormComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        // Subscribe to the selectedLog observable
-        this.logService.selectedLog.subscribe(function (log) {
-            if (log.id !== null) {
-                _this.isNew = false;
-                _this.id = log.id;
-                _this.text = log.text;
-                _this.date = log.date;
-            }
-        });
-    };
-    LogFormComponent.prototype.onSubmit = function () {
-        // Check if new log
-        if (this.isNew) {
-            // Create a new log
-            var newLog = {
-                id: this.generateId(),
-                text: this.text,
-                date: new Date()
-            };
-            // Add log
-            this.logService.addLog(newLog);
-        }
-        else {
-            // Create log to be updated
-            var updLog = {
-                id: this.id,
-                text: this.text,
-                date: new Date()
-            };
-            // Update log
-            this.logService.updateLog(updLog);
-        }
-        // Clear state
-        this.clearState();
-    };
-    LogFormComponent.prototype.clearState = function () {
-        this.isNew = true;
-        this.id = '';
-        this.text = '';
-        this.date = '';
-        this.logService.clearState();
-    };
-    LogFormComponent.prototype.generateId = function () {
-        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-            var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
-            return v.toString(16);
-        });
-    };
-    LogFormComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-log-form',
-            template: __webpack_require__(/*! ./log-form.component.html */ "./src/app/components/log-form/log-form.component.html"),
-            styles: [__webpack_require__(/*! ./log-form.component.css */ "./src/app/components/log-form/log-form.component.css")]
-        }),
-        __metadata("design:paramtypes", [_services_log_service__WEBPACK_IMPORTED_MODULE_1__["LogService"]])
-    ], LogFormComponent);
-    return LogFormComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/components/logs/logs.component.css":
-/*!****************************************************!*\
-  !*** ./src/app/components/logs/logs.component.css ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ".log-date {\r\n  color: #777;\r\n}"
-
-/***/ }),
-
-/***/ "./src/app/components/logs/logs.component.html":
-/*!*****************************************************!*\
-  !*** ./src/app/components/logs/logs.component.html ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<ul class=\"list-group\" *ngIf=\"loaded && logs.length > 0\">\n  <li *ngFor=\"let log of logs\" [class.list-group-item-secondary]=\"selectedLog === log\" class=\"list-group-item d-flex justify-content-between align-items-center\">\n    <a (click)=\"onSelect(log)\" href=\"#\">{{ log.text }}</a> \n    <span class=\"log-date\">{{ log.date | date: 'short'}}</span>\n    <i (click)=\"onDelete(log)\" class=\"fa fa-remove\"></i>\n  </li>\n</ul>\n\n<div *ngIf=\"loaded && logs.length == 0\">\n  <h5>There are no logs in the system</h5>\n</div>\n\n<div *ngIf=\"!loaded\">\n  <h5>Loading...</h5>\n</div>"
-
-/***/ }),
-
-/***/ "./src/app/components/logs/logs.component.ts":
-/*!***************************************************!*\
-  !*** ./src/app/components/logs/logs.component.ts ***!
-  \***************************************************/
-/*! exports provided: LogsComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LogsComponent", function() { return LogsComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_log_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/log.service */ "./src/app/services/log.service.ts");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var LogsComponent = /** @class */ (function () {
-    function LogsComponent(logService) {
-        this.logService = logService;
-        this.loaded = false;
-    }
-    LogsComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.logService.stateClear.subscribe(function (clear) {
-            if (clear) {
-                _this.selectedLog = { id: '', text: '', date: '' };
-            }
-        });
-        this.logService.getLogs().subscribe(function (logs) {
-            _this.logs = logs;
-            _this.loaded = true;
-        });
-    };
-    LogsComponent.prototype.onSelect = function (log) {
-        this.logService.setFormLog(log);
-        this.selectedLog = log;
-    };
-    LogsComponent.prototype.onDelete = function (log) {
-        if (confirm('Are you sure?')) {
-            this.logService.deleteLog(log);
-        }
-    };
-    LogsComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-logs',
-            template: __webpack_require__(/*! ./logs.component.html */ "./src/app/components/logs/logs.component.html"),
-            styles: [__webpack_require__(/*! ./logs.component.css */ "./src/app/components/logs/logs.component.css")]
-        }),
-        __metadata("design:paramtypes", [_services_log_service__WEBPACK_IMPORTED_MODULE_1__["LogService"]])
-    ], LogsComponent);
-    return LogsComponent;
 }());
 
 
@@ -358,7 +157,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-dark bg-dark mb-3\">\n  <div class=\"container\">\n    <a href=\"/\" class=\"navbar-brand\">DevLogger</a>\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-dark bg-dark mb-3\">\n  <div class=\"container\">\n    <a href=\"/\" class=\"navbar-brand\">Product Management Console</a>\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -403,16 +202,253 @@ var NavbarComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/services/log.service.ts":
-/*!*****************************************!*\
-  !*** ./src/app/services/log.service.ts ***!
-  \*****************************************/
-/*! exports provided: LogService */
+/***/ "./src/app/components/product-form/product-form.component.css":
+/*!********************************************************************!*\
+  !*** ./src/app/components/product-form/product-form.component.css ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/product-form/product-form.component.html":
+/*!*********************************************************************!*\
+  !*** ./src/app/components/product-form/product-form.component.html ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"card card-body mb-3\">\n  <form (ngSubmit)=\"onSubmit()\">\n    <div class=\"form-group\">\n      <input type=\"name\" name=\"name\" [(ngModel)]=\"name\" class=\"form-control\" placeholder=\"Add a product...\">\n    </div>\n    <input type=\"submit\" value=\"Add Product\" class=\"btn btn-light mr-3\" [disabled]=\"!this.name\">\n    <button (click)=\"clearState()\" type=\"button\" class=\"btn btn-warning\" [hidden]=!this.name>Clear</button>\n  </form>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/product-form/product-form.component.ts":
+/*!*******************************************************************!*\
+  !*** ./src/app/components/product-form/product-form.component.ts ***!
+  \*******************************************************************/
+/*! exports provided: ProductFormComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LogService", function() { return LogService; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductFormComponent", function() { return ProductFormComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_product_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/product.service */ "./src/app/services/product.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var ProductFormComponent = /** @class */ (function () {
+    function ProductFormComponent(productService) {
+        this.productService = productService;
+        this.isActive = false;
+        this.isNew = true;
+    }
+    ProductFormComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        // Subscribe to the selectedProduct observable
+        this.productService.selectedProduct.subscribe(function (product) {
+            if (product.id !== null) {
+                _this.isNew = false;
+                _this.id = product.id;
+                _this.name = product.name;
+                _this.date = product.date;
+                _this.isActive = true;
+            }
+        });
+    };
+    ProductFormComponent.prototype.onSubmit = function () {
+        var IMAGE_URL = 'https://picsum.photos/400?product';
+        // Check if new product
+        if (this.isNew) {
+            // Create a new product
+            var newProduct = {
+                id: this.generateId(),
+                name: this.name,
+                sku: this.sku ? this.sku : Math.floor(Math.random() * 1060) + 1,
+                description: this.description ? this.description : this.randomString(40),
+                brand: this.brand ? this.brand : this.randomString(10),
+                date: new Date(),
+                image: IMAGE_URL + Math.floor(Math.random() * 1060) + 1,
+                isActive: (Math.floor((Math.random() * 10) + 1) > 5)
+            };
+            // Add product
+            this.productService.addProduct(newProduct);
+        }
+        else {
+            // Create product to be updated
+            var updProduct = {
+                id: this.id,
+                name: this.name,
+                sku: this.sku ? this.sku : Math.floor(Math.random() * 1060) + 1,
+                description: this.description ? this.description : this.randomString(40),
+                brand: this.brand ? this.brand : this.randomString(10),
+                date: new Date(),
+                image: IMAGE_URL + Math.floor(Math.random() * 1060) + 1,
+                isActive: (Math.floor((Math.random() * 10) + 1) > 5)
+            };
+            // Update product
+            this.productService.updateProduct(updProduct);
+        }
+        // Clear state
+        this.clearState();
+    };
+    ProductFormComponent.prototype.clearState = function () {
+        this.isNew = true;
+        this.id = '';
+        this.name = '';
+        this.date = '';
+        this.isActive = false;
+        this.productService.clearState();
+    };
+    ProductFormComponent.prototype.randomString = function (length) {
+        var text = "";
+        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        for (var i = 0; i < length; i++) {
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+        }
+        return text;
+    };
+    ProductFormComponent.prototype.generateId = function () {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+            var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
+    };
+    ProductFormComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-product-form',
+            template: __webpack_require__(/*! ./product-form.component.html */ "./src/app/components/product-form/product-form.component.html"),
+            styles: [__webpack_require__(/*! ./product-form.component.css */ "./src/app/components/product-form/product-form.component.css")]
+        }),
+        __metadata("design:paramtypes", [_services_product_service__WEBPACK_IMPORTED_MODULE_1__["ProductService"]])
+    ], ProductFormComponent);
+    return ProductFormComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/products/products.component.css":
+/*!************************************************************!*\
+  !*** ./src/app/components/products/products.component.css ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".product-date {\r\n  color: #777;\r\n}"
+
+/***/ }),
+
+/***/ "./src/app/components/products/products.component.html":
+/*!*************************************************************!*\
+  !*** ./src/app/components/products/products.component.html ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ul class=\"list-group\" *ngIf=\"loaded && products.length > 0\">\n  <li *ngFor=\"let product of products\" [class.list-group-item-secondary]=\"selectedProduct === product\"\n    class=\"list-group-item d-flex justify-content-between align-items-center\"\n    [class.bg-light]=\"product.isActive\" [style.border-color]=\"product.isActive ? 'green' : ''\">\n    <div class=\"row mb-5\">\n      <div class=\"col-sm-8\">\n        <h3 [ngStyle]=\"currentStyles\"> <a (click)=\"onSelect(product)\" href=\"#\">{{ product.name }}</a>  </h3>\n          <ul class=\"list-group\" *ngIf=\"showExtended && product.sku && product.date\">\n            <li class=\"list-group-item\">SKU: {{ product.sku }}</li>\n            <li class=\"list-group-item\">Date: {{ product.date | date: 'short'}}</li>\n          </ul>\n\n          <ul class=\"list-group\" *ngIf=\"showExtended && product.brand && product.description\">\n            <li class=\"list-group-item\">Brand: {{ product.brand }}</li>\n            <li class=\"list-group-item\">Description: {{ product.description}}</li>\n          </ul>\n          <button (click)=\"onDelete(product)\" type=\"button\" class=\"btn btn-danger pull-right mt-5\" [hidden]=!product.isActive>Delete</button>\n      </div>\n      <div class=\"col-sm-4 pull-right\" >\n        <img *ngIf=\"product.image\" class=\"img-fluid\" [src]=\"product.image\" alt=\"\">\n      </div>\n    </div>\n  </li>\n</ul>\n\n<div *ngIf=\"loaded && products.length == 0\">\n  <h5>There are no products in the system</h5>\n</div>\n\n<div *ngIf=\"!loaded\">\n  <h5>Loading...</h5>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/products/products.component.ts":
+/*!***********************************************************!*\
+  !*** ./src/app/components/products/products.component.ts ***!
+  \***********************************************************/
+/*! exports provided: ProductsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductsComponent", function() { return ProductsComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_product_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/product.service */ "./src/app/services/product.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var ProductsComponent = /** @class */ (function () {
+    function ProductsComponent(productService) {
+        this.productService = productService;
+        this.loaded = false;
+        this.showExtended = true;
+        this.currentClasses = {};
+        this.currentStyles = {};
+    }
+    ProductsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.productService.stateClear.subscribe(function (clear) {
+            if (clear) {
+                _this.selectedProduct = { id: '', name: '', sku: -1, description: '', brand: '', image: '', date: '', isActive: false };
+            }
+        });
+        this.productService.getProducts().subscribe(function (products) {
+            _this.products = products;
+            _this.loaded = true;
+        });
+    };
+    ProductsComponent.prototype.onSelect = function (product) {
+        this.productService.setFormProduct(product);
+        this.selectedProduct = product;
+    };
+    ProductsComponent.prototype.onDelete = function (product) {
+        if (confirm('Are you sure?')) {
+            this.productService.deleteProduct(product);
+        }
+    };
+    ProductsComponent.prototype.setCurrentClasses = function () {
+        this.currentClasses = {
+            'big-text': this.showExtended
+        };
+    };
+    ProductsComponent.prototype.setCurrentStyles = function () {
+        this.currentStyles = {
+            'padding-top': this.showExtended ? '0' : '40px',
+            'font-size': this.showExtended ? '' : '40px'
+        };
+    };
+    ProductsComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-products',
+            template: __webpack_require__(/*! ./products.component.html */ "./src/app/components/products/products.component.html"),
+            styles: [__webpack_require__(/*! ./products.component.css */ "./src/app/components/products/products.component.css")]
+        }),
+        __metadata("design:paramtypes", [_services_product_service__WEBPACK_IMPORTED_MODULE_1__["ProductService"]])
+    ], ProductsComponent);
+    return ProductsComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/product.service.ts":
+/*!*********************************************!*\
+  !*** ./src/app/services/product.service.ts ***!
+  \*********************************************/
+/*! exports provided: ProductService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductService", function() { return ProductService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
@@ -426,68 +462,67 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
-
-var LogService = /** @class */ (function () {
-    function LogService() {
-        // this.logs = [
+var ProductService = /** @class */ (function () {
+    function ProductService() {
+        // this.products = [
         //   {id: '1', text: 'Generated components', date: new Date('12/26/2017 12:54:23')},
         //   {id: '2', text: 'Added Bootstrap', date: new Date('12/27/2017 9:33:13')},
-        //   {id: '3', text: 'Added logs component', date: new Date('12/27/2017 12:00:23')}
+        //   {id: '3', text: 'Added products component', date: new Date('12/27/2017 12:00:23')}
         // ]
-        this.logSource = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"]({ id: null, text: null, date: null });
-        this.selectedLog = this.logSource.asObservable();
+        this.productSource = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"]({ id: '', name: '', sku: -1, description: '', brand: '', image: '', date: '', isActive: false });
+        this.selectedProduct = this.productSource.asObservable();
         this.stateSource = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"](true);
         this.stateClear = this.stateSource.asObservable();
-        this.logs = [];
+        this.products = [];
     }
-    LogService.prototype.getLogs = function () {
-        if (localStorage.getItem('logs') === null) {
-            this.logs = [];
+    ProductService.prototype.getProducts = function () {
+        if (localStorage.getItem('products') === null) {
+            this.products = [];
         }
         else {
-            this.logs = JSON.parse(localStorage.getItem('logs'));
+            this.products = JSON.parse(localStorage.getItem('products'));
         }
-        return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["of"])(this.logs.sort(function (a, b) {
+        return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["of"])(this.products.sort(function (a, b) {
             return b.date = a.date;
         }));
     };
-    LogService.prototype.setFormLog = function (log) {
-        this.logSource.next(log);
+    ProductService.prototype.setFormProduct = function (product) {
+        this.productSource.next(product);
     };
-    LogService.prototype.addLog = function (log) {
-        this.logs.unshift(log);
+    ProductService.prototype.addProduct = function (product) {
+        this.products.unshift(product);
         // Add to local storage
-        localStorage.setItem('logs', JSON.stringify(this.logs));
+        localStorage.setItem('products', JSON.stringify(this.products));
     };
-    LogService.prototype.updateLog = function (log) {
+    ProductService.prototype.updateProduct = function (product) {
         var _this = this;
-        this.logs.forEach(function (cur, index) {
-            if (log.id === cur.id) {
-                _this.logs.splice(index, 1);
+        this.products.forEach(function (cur, index) {
+            if (product.id === cur.id) {
+                _this.products.splice(index, 1);
             }
         });
-        this.logs.unshift(log);
+        this.products.unshift(product);
         // Update local storage
-        localStorage.setItem('logs', JSON.stringify(this.logs));
+        localStorage.setItem('products', JSON.stringify(this.products));
     };
-    LogService.prototype.deleteLog = function (log) {
+    ProductService.prototype.deleteProduct = function (product) {
         var _this = this;
-        this.logs.forEach(function (cur, index) {
-            if (log.id === cur.id) {
-                _this.logs.splice(index, 1);
+        this.products.forEach(function (cur, index) {
+            if (product.id === cur.id) {
+                _this.products.splice(index, 1);
             }
         });
         // Delete from local storage
-        localStorage.setItem('logs', JSON.stringify(this.logs));
+        localStorage.setItem('products', JSON.stringify(this.products));
     };
-    LogService.prototype.clearState = function () {
+    ProductService.prototype.clearState = function () {
         this.stateSource.next(true);
     };
-    LogService = __decorate([
+    ProductService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
         __metadata("design:paramtypes", [])
-    ], LogService);
-    return LogService;
+    ], ProductService);
+    return ProductService;
 }());
 
 
@@ -536,7 +571,7 @@ if (_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].produc
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["enableProdMode"])();
 }
 Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformBrowserDynamic"])().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_2__["AppModule"])
-    .catch(function (err) { return console.log(err); });
+    .catch(function (err) { return console.error(err); });
 
 
 /***/ }),
