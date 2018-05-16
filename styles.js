@@ -580,8 +580,8 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/user/Pictures/Evergage/ProductApplication_version2/src/styles.css */"./src/styles.css");
-module.exports = __webpack_require__(/*! /Users/user/Pictures/Evergage/ProductApplication_version2/node_modules/bootstrap/dist/css/bootstrap.css */"./node_modules/bootstrap/dist/css/bootstrap.css");
+__webpack_require__(/*! /Users/user/Pictures/Evergage/ProductManagementConsole/src/styles.css */"./src/styles.css");
+module.exports = __webpack_require__(/*! /Users/user/Pictures/Evergage/ProductManagementConsole/node_modules/bootstrap/dist/css/bootstrap.css */"./node_modules/bootstrap/dist/css/bootstrap.css");
 
 
 /***/ })
